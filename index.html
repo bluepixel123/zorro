@@ -1,0 +1,113 @@
+}<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Promo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Arial Black',gadget,sans-serif;}
+html,body{width:100%;height:100%;overflow:hidden;}
+
+.container{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100svh;
+  height:100dvh;
+  background:url('fondo.png') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.contenido{
+  z-index:20;
+  text-align:center;
+  padding:10px;
+}
+
+.titulo{
+  font-size:clamp(2.5rem,7vw,3.5rem);
+  color:#FFD700;
+  text-shadow:0 0 5px #FFD700,0 0 15px orange;
+}
+
+.flex-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+  margin:10px 0;
+}
+
+.porcentaje{
+  font-size:clamp(3rem,8vw,4.5rem);
+  color:#FFD700;
+  animation:latido 1.5s infinite;
+}
+
+.main-img{width:clamp(220px,40vw,400px);}
+.logo{width:clamp(220px,50vw,350px);margin:10px auto;}
+
+.click-text{margin:10px 0;letter-spacing:4px;color:#FF4444;}
+
+.whatsapp-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 30px;
+  background:linear-gradient(45deg,#25d366,#128C7E);
+  border-radius:40px;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 0 25px #25d366;
+  animation:latido 1.5s infinite;
+}
+
+.whatsapp-icon{width:30px;}
+
+@keyframes latido{
+  0%{transform:scale(1);}
+  50%{transform:scale(1.05);}
+  100%{transform:scale(1);}
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="contenido">
+    <h1 class="titulo">BONY DE BIENVENIDA</h1>
+
+    <div class="flex-row">
+      <span class="porcentaje">100%</span>
+      <img src="central.png" class="main-img">
+      <span class="porcentaje">100%</span>
+    </div>
+
+    <img src="logo.png" class="logo">
+
+    <p class="click-text">CLICK AQUÍ</p>
+
+    <a href="https://wa.me/5491167953489" target="_blank" class="whatsapp-btn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon">
+      WHATSAPP
+    </a>
+  </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    img.addEventListener("error", () => {
+      console.log("Imagen rota eliminada:", img.src);
+      img.remove();
+    });
+  });
+});
+</script>
+
+</body>
+</html>
